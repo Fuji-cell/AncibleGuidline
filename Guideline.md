@@ -18,7 +18,7 @@
   
  ※本資料の公開範囲は富士通グループに限ります
 
- # 用語集
+# 用語集
 
 本資料で使用する用語の意味は下記の通り。
 
@@ -167,8 +167,8 @@ Ansibleコードを作成する上で守るべきルールについて、以下�
 - タスクの内容を明確化しAnsible実行時のログの可読性も高くするために、タスクにはタイトル情報としてnameを記述する。  
 nameにタスクの処理内容が想定できるように記述すること。
 - 可読性を考慮し、1 行に収まるように記載する。
- 
-nameの記述例 
+
+nameの記述例
 > -name: send show version
 nxos_command:
 commands: "show version"
@@ -239,6 +239,7 @@ roles/cisco/tasks/OS_versionup.yml
 - 大部分は共通しているが一部複数ノード間で異なる値の差分を持つファイルはcopyモジュールではなくtemplateモジュールを利用してテンプレート化する。
 
 テンプレート化する手順は次の通りである。
+
 1. テンプレートの雛形となるファイルを取得する。
 2. テンプレート名となるファイル名を命名し、末尾に.j2の拡張子を付与する
 3. 変数とすべき設定値の箇所を変数名に置換する。
@@ -337,7 +338,7 @@ ansible.cfgの記載内容について定義する
 ## ■ansible.cfg
 
 - Ansibleのベース設定ファイル（Linuxで言うところのhttpd.confファイルのようなイメージ）
- 
+
 |ansible.cfg(記載例) |説明 |
 |:--- |:--- |
 |[defaults] | |
@@ -493,7 +494,7 @@ group_varsの記載内容について定義する
 |&emsp;server_port: 443 |接続ポート |
 |&emsp;validate_certs: no |証明書の検証の有無 |
 |&emsp; | |
-|filepath: ../logs/{{ lookup('pipe', 'date +%Y%m%d') }}_conf |ログを保存するファイルパスとファイル名を指定<br>"logs"配下に「日付_conf」フォルダを作成 |
+|filepath: ../logs/{{ lookup('pipe', 'date +%Y%m%d') }}_conf |ログを保存するファイルパスとファイル名を指定  "logs"配下に「日付_conf」フォルダを作成 |
 |&emsp; | |
 |ping_dest: |【変数】Pingの送信先を指定 |
 |&emsp;- dest_ip: 10.100.100.9 |Pingの送信先 |
@@ -808,8 +809,6 @@ tasksの記載内容について定義する
 |&emsp;&emsp;│  │      main.yml |
 |&emsp;&emsp;│  ├─meta/ |
 |&emsp;&emsp;│  │      main.yml |
-
-<br/>
 
 ### 優先順位：(高①←⑥低)
 
