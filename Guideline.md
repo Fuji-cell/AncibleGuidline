@@ -125,29 +125,36 @@ playbookヘッダの記載内容について定義する。
   
 ※playbookの処理内容を把握しやすくし流用できるようにするため
 
-|playbookヘッダ(記載例) |説明 |
-|:--- |:--- |
-|--- | |
-|# test.yml |playbook名 |
-|# COPYRIGHT 20XX FUJITSU LIMITED |コピーライトの記載 |
-|# YYYY/MM/DD verX.X.X new or modified |playbook版数や更新日時の管理 |
-|# Conform to Guideline verY.Y.Y |準拠するガイドライン版数 |
-|################################################## | |
-|## [Process Name] |処理の名前を記載する |
-|##   Check interfaces status(down) | |
-|## | |
-|## [Summary] |処理概要を記載する |
-|##   Check interfaces status of L2SW | |
-|## | |
-|## [Prerequisites] | |
-|##   Cisco IOS XE Version 17.3 |処理の前提条件を記載する。ロールについては動作確認を行ったファームウェア情報を前提条件に記載する |
-|## [Input] |入力ファイル、入力変数の一覧と、その説明を記載する。 |
-|##   {{ intenface_list_to_L2 }} : Physical-IF(L2SW)<br>##   {{ intenface_list_to_L3 }} : Logical-IF(L3SW)|パラメータファイル等を入力として受け取る場合は、その構成等の説明を記載する。 |
-|## | |
-|## [Output] |出力ファイルの一覧と、その説明を記載する |
-|##   None | |
-|## | |
-|################################################## | |
+playbookヘッダ(記載例)
+```
+.
+├── test.yml (1)
+├── COPYRIGHT 20XX FUJITSU LIMITED (2)
+├── YYYY/MM/DD verX.X.X new or modified (3)
+├── Conform to Guideline verY.Y.Y (4)
+├── [Process Name] (5)
+│   └── Check interfaces status(down)
+├── [Summary] (6)
+│   └── Check interfaces status of L2SW
+├── [Prerequisites]
+│   └── Cisco IOS XE Version 17.3 (7)
+├── [Input] (8)
+│   ├── {{ intenface_list_to_L2 }} : Physical-IF(L2SW)
+│   └── {{ intenface_list_to_L3 }} : Logical-IF(L3SW) (9)
+├── [Output] (10)
+│   └── None
+```
+
+1. playbook名
+2. コピーライトの記載
+3. playbook版数や更新日時の管理
+4. 準拠するガイドライン版数
+5. 処理の名前を記載する
+6. 処理概要を記載する
+7. 処理の前提条件を記載する。ロールについては動作確認を行ったファームウェア情報を前提条件に記載する
+8. 入力ファイル、入力変数の一覧と、その説明を記載する。
+9. パラメータファイル等を入力として受け取る場合は、その構成等の説明を記載する。
+10. 出力ファイルの一覧と、その説明を記載する
 
 # コーディングルール
 
